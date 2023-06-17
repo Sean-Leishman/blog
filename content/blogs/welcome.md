@@ -3,8 +3,6 @@ author: "Sean Leishman"
 title: "Welcome Post"
 date: "2023-06-17"
 tags: ["Personal"]
-hideMeta: true
-searchHidden: true
 ShowBreadCrumbs: true
 ShowToc: false
 ---
