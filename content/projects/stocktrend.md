@@ -8,7 +8,7 @@ ShowToc: false
 weight: 1
 ---
 
-Find the website at [StockTrend](https://stocktrend.co.uk/)
+![StockTrend](../stocktrend.png)
 
 ### The GameStop saga.
 
@@ -22,11 +22,11 @@ While the high did not last the entire sage showcased the power that individual 
 
 To put it in a sentence, the general idea of StockTrend, is to provide a method to show current stock market sentiments based on real-time data. Twitter was chosen as the source of real-time data as it offers a vast and diverse user bases, encompassing traders, investors and enthusists from all walks of life and as such we increase our liklihood we represent the total opinion of the collective. Also, as one of the largest social media sources on the planet, it is a premium social media for reacting to gloabl events as they unfold, providing a timely understanding to specific and marco stock movements.
 
-(It is also important to note that unfortunatly as I was working on this project Twitter removed access to both tweet searching and filtered stream on it's free tier and as such the website provides little functionality and testing was done at minimal levels)
+(It is also important to note that unfortunatly as I was working on this project Twitter [removed access](https://twitter.com/TwitterDev/status/1621026986784337922) to both tweet searching and filtered stream on it's free tier and as such the website provides little functionality and testing was done at minimal levels)
 
 ### Tech Stack
 
-As with any web-based project there is a front-end and back-end and of course the methods to which we communicate with one another. Honestly, I do not think choices particularily matter for specific technologies as any gains a certain tech stack may other would almost certainly be counteracted by a subpar implementation but as I am trying to learn more about various web technologies I try to pick varied technologies for each project. To quickly run through it, SvelteKit was used for the entirity of the website, so it handles requesting data from our backend data stores. Python was chosen to query our machine learning model in order to generate sentiment values and Node.js was used as part of the backend in order to interact with the model and to interact with the [Twitter API](https://developer.twitter.com/en/docs/platform-overview).
+As with any web-based project there is a front-end and back-end and of course the methods to which we communicate with one another. Honestly, I do not think choices particularily matter for specific technologies as any gains a certain tech stack may other would almost certainly be counteracted by a subpar implementation but as I am trying to learn more about various web technologies I try to pick varied technologies for each project. To quickly run through it, [SvelteKit](https://kit.svelte.dev/) was used for the entirity of the website, so it handles requesting data from our backend data stores. Python was chosen to query our machine learning model in order to generate sentiment values and Node.js was used as part of the backend in order to interact with the model and to interact with the [Twitter API](https://developer.twitter.com/en/docs/platform-overview).
 
 ### Architecture
 
@@ -44,7 +44,7 @@ What resulted was a steady stream of data however this data, although relevant h
 
 ### Data Storage
 
-Amazon s3 buckets provided a simple solution. Each bucket can be referenced some key and as such can be referenced as "${stockName}/date/." for uploading data and also for retrival of data for either processing or display.
+Amazon s3 buckets provided a simple solution. Each bucket can be referenced some key and as such can be referenced as `${stockName}/date/.` for uploading data and also for retrival of data for either processing or display.
 
 ## Data Processing
 
