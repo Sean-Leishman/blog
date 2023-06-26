@@ -8,7 +8,9 @@ ShowToc: false
 weight: 1
 ---
 
-![StockTrend](../stocktrend.png)
+> Source code can be found at [Github](https://github.com/Sean-Leishman/stocktrend)
+
+![StockTrend](../../stocktrend.png)
 
 ### The GameStop saga.
 
@@ -64,3 +66,7 @@ Throughout the project I have honed my skills of full-stack development, from th
 
 In conclusion, the development journey of creating a stock sentiment analysis website that harnesses Twitter data has illuminated the power and potential of social media in shaping market insights. By leveraging real-time data and sentiment analysis techniques, such a website offers investors a unique perspective on the sentiment surrounding stocks.
 Ultimately, the development of a stock sentiment analysis website serves as a testament to the transformative potential of social media and technology in the financial landscape. By embracing the insights gleaned from social media data and sentiment analysis, investors can make more informed decisions, navigate market uncertainties, and adapt to evolving trends.
+
+See you next time,
+
+Sean
