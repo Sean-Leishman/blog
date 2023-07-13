@@ -57,6 +57,10 @@ params:
   images: ["papermod-cover.png"]
   mainSections: ["blogs", "projects"]
 
+  label:
+    icon: "ReadyPlayerMe-Avatar(2) - Copy.png"
+    iconHeight: 50
+
   profileMode:
     enabled: false
     title: the log of things
