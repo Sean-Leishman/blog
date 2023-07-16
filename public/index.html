@@ -14,8 +14,8 @@
 </title>  <meta name="description" content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"> <meta name="author" content="Theme PaperMod"> <link rel="canonical" href="https://www.blog.seanleishman.com/">
 <link
   crossorigin="anonymous"
-  href="/assets/css/stylesheet.9999709af4ad324db13721dc667251b7ef23c29862429908ee172c25d781b902.css"
-  integrity="sha256-mZlwmvStMk2xNyHcZnJRt&#43;8jwphiQpkI7hcsJdeBuQI="
+  href="/assets/css/stylesheet.32e8124fdc4644ae237d030d71050577a29e401cef8d7dea047cd80e9dbf7539.css"
+  integrity="sha256-MugST9xGRK4jfQMNcQUFd6KeQBzvjX3qBHzYDp2/dTk="
   rel="preload stylesheet"
   as="style"
 /> <link rel="icon" href="https://www.blog.seanleishman.com/favicon.ico"> <link
@@ -72,7 +72,102 @@ rel="icon" type="image/png" sizes="16x16" href="https://www.blog.seanleishman.co
       }
     }
   </style>
-</noscript><meta property="og:title" content="the log of things" />
+</noscript> <script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+ 
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+  (function () {
+    console.log("running");
+    window.signature = {
+      initialize: function () {
+        return $("#signature").each(function () {
+          var delay,
+            i,
+            len,
+            length,
+            path,
+            paths,
+            previousStrokeLength,
+            results,
+            speed;
+          paths = $("path, circle, rect", this);
+          delay = 0;
+          results = [];
+
+          console.log("initalise");
+          for (i = 0, len = paths.length; i < len; i++) {
+            path = paths[i];
+            length = path.getTotalLength();
+            previousStrokeLength = speed || 0;
+            speed = length < 100 ? 20 : Math.floor(length);
+            delay += previousStrokeLength + 100;
+            results.push(
+              $(path)
+                .css("transition", "none")
+                .attr("data-length", length)
+                .attr("data-speed", speed)
+                .attr("data-delay", delay)
+                .attr("stroke-dashoffset", length)
+                .attr("stroke-dasharray", length + "," + length)
+            );
+          }
+          return results;
+        });
+      },
+      animate: function () {
+        return $("#signature").each(function () {
+          var delay, i, len, length, path, paths, results, speed;
+          paths = $("path, circle, rect", this);
+          console.log("animate");
+          console.log(paths);
+          results = [];
+          for (i = 0, len = paths.length; i < len; i++) {
+            path = paths[i];
+            length = $(path).attr("data-length");
+            speed = $(path).attr("data-speed");
+            delay = $(path).attr("data-delay");
+            results.push(
+              $(path)
+                .css(
+                  "transition",
+                  "stroke-dashoffset " + speed + "ms " + delay + "ms linear"
+                )
+                .attr("stroke-dashoffset", "0")
+            );
+          }
+          return results;
+        });
+      },
+    };
+
+    $(document).ready(function () {
+      window.signature.initialize();
+      return $("button").on("click", function () {
+        window.signature.initialize();
+        return setTimeout(function () {
+          return window.signature.animate();
+        }, 500);
+      });
+    });
+
+    $(window).load(function () {
+      return window.signature.animate();
+    });
+  }).call(this);
+</script>
+<meta property="og:title" content="the log of things" />
 <meta property="og:description" content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.blog.seanleishman.com/" /><meta property="og:image" content="https://www.blog.seanleishman.com/papermod-cover.png"/>
@@ -201,12 +296,24 @@ rel="icon" type="image/png" sizes="16x16" href="https://www.blog.seanleishman.co
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>GyroSound: Handheld Music Playing
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Source code can be found at Github GyroSound was created as part a group project while on my exchange year in Singapore. We were taskted with coming up with an Android App which utlized the instrumentation available on the device. What came from this process was GyroSound.
+What is GyroSound? GyroSound is an Android app that focussed on encouraging people of all ages to explore music with no barriers to entry....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-07-16 00:00:00 +0000 UTC'>July 16, 2023</span>&nbsp;·&nbsp;8 min&nbsp;·&nbsp;Sean Leishman</footer>
+  <a class="entry-link" aria-label="post link to GyroSound: Handheld Music Playing" href="https://www.blog.seanleishman.com/projects/gryosound/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Et Tu UV: Designing Wearables
     </h2>
   </header>
   <div class="entry-content">
-    <p>Source code can be found at Github
-This project was created as part of the SMU-X program that I participated in during my exchange year. The main characteristic of this program is that students work with some organisation to deliver a project that closely mimics the requirements and ideologies of a real-world project. This project was part of an Internet-of-Things course that focussed on developing physical, internet-enabled devices for everyday social problems and investigating the viability and effect of those solutions....</p>
+    <p>Source code can be found at Github This project was created as part of the SMU-X program that I participated in during my exchange year. The main characteristic of this program is that students work with some organisation to deliver a project that closely mimics the requirements and ideologies of a real-world project. This project was part of an Internet-of-Things course that focussed on developing physical, internet-enabled devices for everyday social problems and investigating the viability and effect of those solutions....</p>
   </div>
   <footer class="entry-footer"><span title='2023-07-03 00:00:00 +0000 UTC'>July 3, 2023</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Sean Leishman</footer>
   <a class="entry-link" aria-label="post link to Et Tu UV: Designing Wearables" href="https://www.blog.seanleishman.com/projects/et-tu-uv/"></a>
@@ -218,8 +325,7 @@ This project was created as part of the SMU-X program that I participated in dur
     </h2>
   </header>
   <div class="entry-content">
-    <p>Source code can be found at Github
-Over my life I have had a bit of fascination with the game of chess. Reinvigorated, over the period of COVID, when there was not a whole lot to do aside from learn more about the game. But looking at the engines, I was intrigued with how chess could be mastered and possibly be solved by a computational algorithm.
+    <p>Source code can be found at Github Over my life I have had a bit of fascination with the game of chess. Reinvigorated, over the period of COVID, when there was not a whole lot to do aside from learn more about the game. But looking at the engines, I was intrigued with how chess could be mastered and possibly be solved by a computational algorithm.
 When looking to do this for myself I decided to use Python mostly for it’s ease of use as it was the main language I had learnt up to the stage I started coding the application....</p>
   </div>
   <footer class="entry-footer"><span title='2023-06-24 00:00:00 +0000 UTC'>June 24, 2023</span>&nbsp;·&nbsp;20 min&nbsp;·&nbsp;Sean Leishman</footer>
@@ -232,8 +338,7 @@ When looking to do this for myself I decided to use Python mostly for it’s eas
     </h2>
   </header>
   <div class="entry-content">
-    <p>Source code can be found at Github
-The GameStop saga. It captivated the world and reflected the remarkable shift in trading dynamics. Namely, the rise of day trading and the enourmous online communities that, during the heat of the COVID-19 pandemic, brought many people from the edge to the center of attention in the financial world.
+    <p>Source code can be found at Github The GameStop saga. It captivated the world and reflected the remarkable shift in trading dynamics. Namely, the rise of day trading and the enourmous online communities that, during the heat of the COVID-19 pandemic, brought many people from the edge to the center of attention in the financial world.
 The GameStop Corporation, a struggling brick-and-mortar video game retailer, found itself at the center of this extraordinary story....</p>
   </div>
   <footer class="entry-footer"><span title='2023-06-20 00:00:00 +0000 UTC'>June 20, 2023</span>&nbsp;·&nbsp;8 min&nbsp;·&nbsp;Sean Leishman</footer>
@@ -267,6 +372,7 @@ At this current stage I am four years into an undergraduate degree program study
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
+
 
 <script>
     let menu = document.getElementById('menu')

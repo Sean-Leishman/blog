@@ -61,6 +61,8 @@ params:
     icon: "ReadyPlayerMe-Avatar(2) - Copy.png"
     iconHeight: 50
 
+  math: true
+
   profileMode:
     enabled: false
     title: the log of things
