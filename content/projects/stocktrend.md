@@ -8,7 +8,7 @@ ShowToc: false
 weight: 1
 ---
 
-> Source code can be found at [Github](https://github.com/Sean-Leishman/stocktrend)
+> Source code can be found at {{< newtabref href="https://github.com/Sean-Leishman/stocktrend" title="Github" >}}
 
 ![StockTrend](../../stocktrend.png)
 
@@ -24,11 +24,11 @@ While the high did not last the entire sage showcased the power that individual 
 
 To put it in a sentence, the general idea of StockTrend, is to provide a method to show current stock market sentiments based on real-time data. Twitter was chosen as the source of real-time data as it offers a vast and diverse user bases, encompassing traders, investors and enthusists from all walks of life and as such we increase our liklihood we represent the total opinion of the collective. Also, as one of the largest social media sources on the planet, it is a premium social media for reacting to gloabl events as they unfold, providing a timely understanding to specific and marco stock movements.
 
-(It is also important to note that unfortunatly as I was working on this project Twitter [removed access](https://twitter.com/TwitterDev/status/1621026986784337922) to both tweet searching and filtered stream on it's free tier and as such the website provides little functionality and testing was done at minimal levels)
+(It is also important to note that unfortunatly as I was working on this project Twitter {{< newtabref href="https://twitter.com/TwitterDev/status/1621026986784337922" title="removed access" >}} to both tweet searching and filtered stream on it's free tier and as such the website provides little functionality and testing was done at minimal levels)
 
 ### Tech Stack
 
-As with any web-based project there is a front-end and back-end and of course the methods to which we communicate with one another. Honestly, I do not think choices particularily matter for specific technologies as any gains a certain tech stack may other would almost certainly be counteracted by a subpar implementation but as I am trying to learn more about various web technologies I try to pick varied technologies for each project. To quickly run through it, [SvelteKit](https://kit.svelte.dev/) was used for the entirity of the website, so it handles requesting data from our backend data stores. Python was chosen to query our machine learning model in order to generate sentiment values and Node.js was used as part of the backend in order to interact with the model and to interact with the [Twitter API](https://developer.twitter.com/en/docs/platform-overview).
+As with any web-based project there is a front-end and back-end and of course the methods to which we communicate with one another. Honestly, I do not think choices particularily matter for specific technologies as any gains a certain tech stack may other would almost certainly be counteracted by a subpar implementation but as I am trying to learn more about various web technologies I try to pick varied technologies for each project. To quickly run through it, {{< newtabref href="https://kit.svelte.dev/" title="SvelteKit" >}} was used for the entirity of the website, so it handles requesting data from our backend data stores. Python was chosen to query our machine learning model in order to generate sentiment values and Node.js was used as part of the backend in order to interact with the model and to interact with the {{< newtabref href="https://developer.twitter.com/en/docs/platform-overview" title="Twitter API" >}}.
 
 ### Architecture
 
@@ -50,7 +50,7 @@ Amazon s3 buckets provided a simple solution. Each bucket can be referenced some
 
 ## Data Processing
 
-Now that we can gather relevant tweets with appropriate tags, we can now actually determine the sentiment to be associated with each tweet. The [RoBERTa large model](https://huggingface.co/roberta-large) was gathered from huggingface to be used for this process. I may write a blog talking about this model but generally it is part of the BERT (Bidirectional Encoder Representation from Transformers) family of language models. BERT is based fundamentally on the encoder portion of the transformer model with an innovative training layer in order to efficiently represent contexts, however it differs from traditional RNNs as it uses an entire sentence at once rather than seeing words one after another, hence the model is bidirectional. BERT is specifically trained by masking words in the input and asking the model to predict the masked words and so the model is able to learn an internal representation of English. As such it is useful for us as we can tune the model to perform tasks such as sentiment analysis. This was done using this [kaggle](https://www.kaggle.com/datasets/kazanova/sentiment140) dataset in a supervised manner
+Now that we can gather relevant tweets with appropriate tags, we can now actually determine the sentiment to be associated with each tweet. The {{< newtabref href="https://huggingface.co/roberta-large" title="RoBERTa large model" >}} was gathered from huggingface to be used for this process. I may write a blog talking about this model but generally it is part of the BERT (Bidirectional Encoder Representation from Transformers) family of language models. BERT is based fundamentally on the encoder portion of the transformer model with an innovative training layer in order to efficiently represent contexts, however it differs from traditional RNNs as it uses an entire sentence at once rather than seeing words one after another, hence the model is bidirectional. BERT is specifically trained by masking words in the input and asking the model to predict the masked words and so the model is able to learn an internal representation of English. As such it is useful for us as we can tune the model to perform tasks such as sentiment analysis. This was done using this {{< newtabref href="ttps://www.kaggle.com/datasets/kazanova/sentiment140" title="kaggle" >}} dataset in a supervised manner
 
 With the model trained and ready to make predictions, an API is used to interact with the model in order to seperate processes and as such at regular intervals tweets can be collected from the current bucket and processed, ready for display on the website.
 

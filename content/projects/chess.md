@@ -8,7 +8,7 @@ ShowToc: false
 weight: 1
 ---
 
-> Source code can be found at [Github](https://github.com/Sean-Leishman/turtle-chess/tree/master)
+> Source code can be found at {{< newtabref href="https://github.com/Sean-Leishman/turtle-chess/tree/master" title="Github">}}
 
 {{< figure align=center width=80% height=auto  src="../../chess.png" >}}
 
@@ -434,8 +434,6 @@ Now that we have an ability to play games it is time to think about who to play 
 
 ## Acknowledgements
 
-[Primer on Bitboards](https://pages.cs.wisc.edu/~psilord/blog/data/chess-pages/)
-
-[Definitive Source on Bitboards](https://www.chessprogramming.org/Main_Page)
-
-[Snakefish](https://github.com/cglouch/snakefish/tree/master)
+- {{< newtabref href="https://pages.cs.wisc.edu/~psilord/blog/data/chess-pages/" title="Primer on Bitboards">}}
+- {{< newtabref href="https://www.chessprogramming.org/Main_Page" title="Definitive source on Bitboards">}}
+- {{< newtabref href="https://github.com/cglouch/snakefish/tree/master" title="Snakefish">}}

@@ -8,11 +8,11 @@ ShowToc: false
 weight: 1
 ---
 
-> Source code can be found at [Github](https://github.com/Sean-Leishman/et-tu-uv)
+> Source code can be found at {{< newtabref href="https://github.com/Sean-Leishman/et-tu-uv" title="Github">}}
 
 {{< figure align=center width=80% height=auto  src="../../fullsize.png" >}}
 
-This project was created as part of the [SMU-X](https://x.smu.edu.sg/) program that I participated in during my exchange year. The main characteristic of this program is that students work with some organisation to deliver a project that closely mimics the requirements and ideologies of a real-world project. This project was part of an Internet-of-Things course that focussed on developing physical, internet-enabled devices for everyday social problems and investigating the viability and effect of those solutions. The course covered the process from the design to the testing phase of various IoT projects and solutions.
+This project was created as part of the {{< newtabref href="https://x.smu.edu.sg/" title="SMU-X">}} program that I participated in during my exchange year. The main characteristic of this program is that students work with some organisation to deliver a project that closely mimics the requirements and ideologies of a real-world project. This project was part of an Internet-of-Things course that focussed on developing physical, internet-enabled devices for everyday social problems and investigating the viability and effect of those solutions. The course covered the process from the design to the testing phase of various IoT projects and solutions.
 
 ## What is Et-Tu-UV?
 
@@ -24,13 +24,14 @@ The final product that was chosen, was an Arduino-based wearable that could comm
 
 {{< figure align=center width=80% height=auto  src="../../wearable.jpg" >}}
 
-Generally, there was an approach of quickly slamming together components to form a final product. Here there is the [AdaFruit Flora](https://www.adafruit.com/product/659) module, coupled with a bluetooth component, a UV/temperature/humidity sensor along with a buzzer. These components combined would allow us to communicate wirelessly with a phone and as such with the final web-app.
+Generally, there was an approach of quickly slamming together components to form a final product. Here there is the {{< newtabref href="https://www.adafruit.com/product/659" title="Adafruit Flora" >}} module, coupled with a bluetooth component, a UV/temperature/humidity sensor along with a buzzer. These components combined would allow us to communicate wirelessly with a phone and as such with the final web-app.
 
 ## Architecture
 
 {{< figure align=center width=80% height=auto  src="../../ettuuv-arch.png" >}}
 
-The final solution involved overcoming numerouse engineering challenges to allow communication between various different components, effectively and within a fairly short time frame. The main roadblock occured within the phone and arduino module as the chosen method of communication was bluetooth and as such, data was fairly easily sent out of the bluetooth module but then the phone itself had to send the data to a server. The [app](https://play.google.com/store/apps/details?id=com.adafruit.bluefruit.le.connect&hl=en_GB&gl=US), was not made ourselves and as such we were restricted by the chosen method.
+The final solution involved overcoming numerouse engineering challenges to allow communication between various different components, effectively and within a fairly short time frame. The main roadblock occured within the phone and arduino module as the chosen method of communication was bluetooth and as such, data was fairly easily sent out of the bluetooth module but then the phone itself had to send the data to a server. The
+{{< newtabref href="https://play.google.com/store/apps/details?id=com.adafruit.bluefruit.le.connect&hl=en_GB&gl=US" title="app">}}, was not made ourselves and as such we were restricted by the chosen method.
 
 {{<highlight cpp>}}
 if (currentMillis - previousSendMillis >= sendInterval) {
