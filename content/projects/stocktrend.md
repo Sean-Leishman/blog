@@ -68,5 +68,3 @@ In conclusion, the development journey of creating a stock sentiment analysis we
 Ultimately, the development of a stock sentiment analysis website serves as a testament to the transformation potential of social media and technology in the financial landscape. By embracing the insights gleaned from social media data and sentiment analysis, investors can make more informed decisions, navigate market uncertainties, and adapt to evolving trends.
 
 See you next time,
-
-Sean

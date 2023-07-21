@@ -174,3 +174,5 @@ It is also clear that the UI could do with a lot of improvement and refinement t
 ## Lessons Learnt
 
 The process was my first step in Android app development. One which taught me a lot about the process and the techniques involved in effective app design. In particular, the importance of user-orientated design to ensure a smooth & clean experience for the end-user. The project allowed me and the team to explore the fundamental concepts involved in Android development, such as Activities, Fragments, intents and permissions. Hopefully in the future I can use the experience to develop apps or even to apply myself with user-orientated design and development.
+
+See you next time,
