@@ -437,3 +437,5 @@ Now that we have an ability to play games it is time to think about who to play 
 - {{< newtabref href="https://pages.cs.wisc.edu/~psilord/blog/data/chess-pages/" title="Primer on Bitboards">}}
 - {{< newtabref href="https://www.chessprogramming.org/Main_Page" title="Definitive source on Bitboards">}}
 - {{< newtabref href="https://github.com/cglouch/snakefish/tree/master" title="Snakefish">}}
+
+See you next time,

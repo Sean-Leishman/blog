@@ -108,3 +108,5 @@ In terms of the product itself, improvements would have to be made to the protot
 All in all, I felt the project went well and allowed the group to learn more about the integration of hardware and software in an effective manner. Furthermore, we learned how these sorts of projects could be easily and readily be able to impact a population, Singaporean or not, in their daily activities.
 
 In the future I would look to this project to develop my ideas and improve my own skills in effective data collection. And as such using the data to generate useful and helpful insights that could ultimately help people.
+
+See you next time,
