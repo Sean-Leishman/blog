@@ -24,7 +24,7 @@ First off, to see how this project went and how my thought process and skills im
 
 During the game loop, which is the animation loop in Python, we perform functionality in a turn based system that calculates all valid moves on the board for the current board so that when the user selects two squares via a click then the check for a valid move is quick.
 
-The main portions for this logic occurs in the function `self.board.init_valid()` which introduces a lot of inefficiencies in the code that means that the code is not particularily helpful for use in a chess engine where this function would be called many times within a search tree searching for the best move.
+The main portions for this logic occurs in the function `self.board.init_valid()` which introduces a lot of inefficiencies in the code that means that the code is not particularly helpful for use in a chess engine where this function would be called many times within a search tree searching for the best move.
 
 {{< highlight python >}}
 
@@ -189,9 +189,9 @@ def initialise_boards(self):
 
 In this code for example, bitboards for each piece are stored as a matrix so that we can access each piece bitboard by that pieces colour and piece type. Other bitboards are also in use such as the locations of all pieces on the board, and then the locations of pieces in a colour specific manner.
 
-Don't worry though, the trusty array style of piece representation is still present, specifically in the `FormattedBoard` class which takes in the bitboards and outputs something that can be consumed by our GUI classes present in our first implementation. However, in order to extract piece locations we loop through colours then pieces to get each bitboard. Then we return the indexes of each bit that has been set in the 64 bit number. Essentially this just boils down into some math that allows us to repeatdly remove the least significant bit and get the index of the LSB, until our bitboard is empty (I may write a more indepth blog about this step). All in all we return a representation of the board that can be used to display our GUI.
+Don't worry though, the trusty array style of piece representation is still present, specifically in the `FormattedBoard` class which takes in the bitboards and outputs something that can be consumed by our GUI classes present in our first implementation. However, in order to extract piece locations we loop through colours then pieces to get each bitboard. Then we return the indexes of each bit that has been set in the 64 bit number. Essentially this just boils down into some math that allows us to repeatedly remove the least significant bit and get the index of the LSB, until our bitboard is empty (I may write a more in-depth blog about this step). All in all we return a representation of the board that can be used to display our GUI.
 
-Back to logic now and finding our moves in which we introduce a new class `MoveGenerator` which also uses `MoveGenerationTable`. Our approach broadly follows our first implementation where we generate, what we now call, pseduo legal moves (moves that are legal without considering checks) and then we check for checks. First of all, let's dive deeper into the `MoveGenerationTable` in order to understand the power behind bitboards.
+Back to logic now and finding our moves in which we introduce a new class `MoveGenerator` which also uses `MoveGenerationTable`. Our approach broadly follows our first implementation where we generate, what we now call, pseudo legal moves (moves that are legal without considering checks) and then we check for checks. First of all, let's dive deeper into the `MoveGenerationTable` in order to understand the power behind bitboards.
 
 ### Tables?
 
@@ -282,13 +282,13 @@ Moving on, bishops, rook and queens follow a different logic that means we don't
 
 #### Sliding Moves
 
-The general idea is that, we can reduce the problem down to a singular rank. Each sliding piece (aside from the queen but we will get back to that) has two axes of movements. So for rooks this is along the files & ranks and for the bishop this is along the diagonal and anti-diagonal. Each of these directions of movements can be transformed, ideally into a one dimmension space, as any other square on the board is irrelevant that is not a part of the possible movement direction. As such there are a possible 256 configurations of occupiers on one rank. Each cell can either be filled or not filled by an attacker. Then our piece can be placed on 8 possible squares.
+The general idea is that, we can reduce the problem down to a singular rank. Each sliding piece (aside from the queen but we will get back to that) has two axes of movements. So for rooks this is along the files & ranks and for the bishop this is along the diagonal and anti-diagonal. Each of these directions of movements can be transformed, ideally into a one dimension space, as any other square on the board is irrelevant that is not a part of the possible movement direction. As such there are a possible 256 configurations of occupiers on one rank. Each cell can either be filled or not filled by an attacker. Then our piece can be placed on 8 possible squares.
 
 As such, as part of our precomputation these the bits which can be attacked are calculated for each piece position on one rank, and then all the possible configurations of attackers. This can then be used during real-time move generation to lookup our possible moves for a certain occupation and piece location.
 
 During move generation for sliding pieces, each direction of movement is mapped onto the first rank through a series of bit operations (which I may dive deeper into in another post). As for the queen, this is essentially just the combination of bishop and rook movements and so we can OR their movesets.
 
-Thus we have effectively now produced legal moves for all of our pieces mostly by precomputation. This is the power of bitboards. We can use masks and bitwise operations in order to efficienctly compute new positions simply that would other require iterators and other list based functions that cause too much computation.
+Thus we have effectively now produced legal moves for all of our pieces mostly by precomputation. This is the power of bitboards. We can use masks and bitwise operations in order to efficiently compute new positions simply that would other require iterators and other list based functions that cause too much computation.
 
 ### Our King is Under Attack!!?
 
@@ -422,7 +422,7 @@ Check out the acknowledgements for the sources and inspiration.
 
 ## Lessons Learnt
 
-Overall, I deeply enjoyed the challenge involved in this process. From writing hard to understand and inefficient code to writing somewhat less hard to understand and inefficient code. It is written in Python of course. But, this has been farily enjoyable process thus far. Seeing my old code gives us all a bit of a heartattack but I think it is a worthwhile endevour. We get to see how we have along, what we have improved one, and what problems keeps giving us trouble. In particular, this project emphasised test-driven development and trying to write code that can be tested in a modular fashion so that an overall processes can be pathched together by well-tested components. Also, utilising maths and logic in this comprehensive manner has been a riveting challenging on both a conceptual and practical level however the rewards are clear. Processes are simpler, code is more efficient and easier to expand and scale. I hope I can take what I have learnt here and apply them to many areas of my coding life.
+Overall, I deeply enjoyed the challenge involved in this process. From writing hard to understand and inefficient code to writing somewhat less hard to understand and inefficient code. It is written in Python of course. But, this has been fairly enjoyable process thus far. Seeing my old code gives us all a bit of a heartattack but I think it is a worthwhile endeavour. We get to see how we have along, what we have improved one, and what problems keeps giving us trouble. In particular, this project emphasised test-driven development and trying to write code that can be tested in a modular fashion so that an overall processes can be patched together by well-tested components. Also, utilising maths and logic in this comprehensive manner has been a riveting challenging on both a conceptual and practical level however the rewards are clear. Processes are simpler, code is more efficient and easier to expand and scale. I hope I can take what I have learnt here and apply them to many areas of my coding life.
 
 ### Should I Plan?
 
