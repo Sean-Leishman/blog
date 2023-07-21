@@ -79,7 +79,7 @@ int chimeResult = shouldChime(ble.buffer);
 chimeResult = -1;
 {{</highlight>}}
 
-An output was created and sent via BLE containting (Temp., Humidity, UV) within a singular string into the phone which in turn sent results via MQTT to the final server which processed the results.
+An output was created and sent via BLE containing (Temp., Humidity, UV) within a singular string into the phone which in turn sent results via MQTT to the final server which processed the results.
 
 ## Server
 
@@ -97,13 +97,13 @@ The alert system allows the user to activate custom alerts that warned the user 
 
 {{< figure align=center width=80% height=auto  src="../../timeseries.png" >}}
 
-In order, to achieve a good-looking front-end some extra portions were introduced to show the effectivess of the software that was possible. A map was introduced that contained spots of high heat activitiy, alerts were displayed as well as various graphs that also showcased some of the machine learning methods delivered eariler.
+In order, to achieve a good-looking front-end some extra portions were introduced to show the effectiveness of the software that was possible. A map was introduced that contained spots of high heat activity, alerts were displayed as well as various graphs that also showcased some of the machine learning methods delivered earlier.
 
-## Evalutation
+## Evaluation
 
-There were some questions that we fought of ourselves while developing the software. Some, pretaining to the usefullness of the idea itself. However, this can be justified as users being able to judge for themselves their own sun levels however even the more expereinced holiday travellers know that one can lose track of sun levels themselves. As well as this, this project would be useful for outdoor construction companies looking to overlook the health of their employees to ensure that their employees are not under undue and unhealthy conditions while carrying out labourious activities.
+There were some questions that we fought of ourselves while developing the software. Some, pertaining to the usefulness of the idea itself. However, this can be justified as users being able to judge for themselves their own sun levels however even the more experienced holiday travelers know that one can lose track of sun levels themselves. As well as this, this project would be useful for outdoor construction companies looking to overlook the health of their employees to ensure that their employees are not under undue and unhealthy conditions while carrying out labourious activities.
 
-In terms of the product itself, improvments would have to be made to the prototype to make it wearble by a user and ensuring the hardware is errror free. Other metrics, and the machine learning methods could be devloped further as to allow a more accurate prediction of insights.
+In terms of the product itself, improvements would have to be made to the prototype to make it wearable by a user and ensuring the hardware is error free. Other metrics, and the machine learning methods could be developed further as to allow a more accurate prediction of insights.
 
 All in all, I felt the project went well and allowed the group to learn more about the integration of hardware and software in an effective manner. Furthermore, we learned how these sorts of projects could be easily and readily be able to impact a population, Singaporean or not, in their daily activities.
 

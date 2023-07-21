@@ -12,7 +12,7 @@ weight: 1
 
 {{< figure align=center width=auto height=500px  src="../../playSound.png" >}}
 
-GyroSound was created as part a group project while on my exchange year in Singapore. We were taskted with coming up with an Android App which utlized the instrumentation available on the device. What came from this process was GyroSound.
+GyroSound was created as part a group project while on my exchange year in Singapore. We were tasked with coming up with an Android App which utilised the instrumentation available on the device. What came from this process was GyroSound.
 
 ## What is GyroSound?
 
@@ -26,7 +26,7 @@ As such, music can be produced by anyone, in an intuitive and friendly manner.
 
 It has to be said of course that the inspiration for this project came from a youtube video where someone had demonstrated this concept at a far greater scope: {{< youtube yjyhXKOq0Jg >}}
 
-But we wanted to answer the question if this same product could be similarily applied through everyday use, in the form of a mobile application.
+But we wanted to answer the question if this same product could be similarly applied through everyday use, in the form of a mobile application.
 
 ## System Deepdive
 
@@ -56,13 +56,13 @@ At first, there was the option of passing data through intents, in particular fr
 
 {{< figure align=center width=auto height=500px  src="../../gyroArch.png" >}}
 
-As such we chose to implement the Android `ViewModel` and Android `LiveData`. These classes allow data to be persistent for the lifecycle of the data. The `ViewModel` is tied to the activity it was initialised in and as such the data is persistent across the child fragments of an activity. This method has the benefit of providing a clear seperation of concerns between the state and view of the app. Memory leaks are also prevented by using `LiveData` due to how it is lifecycle aware and as such destorys the data that belongs to it when the activity it belongs to is destroyed.
+As such we chose to implement the Android `ViewModel` and Android `LiveData`. These classes allow data to be persistent for the lifecycle of the data. The `ViewModel` is tied to the activity it was initialised in and as such the data is persistent across the child fragments of an activity. This method has the benefit of providing a clear separation of concerns between the state and view of the app. Memory leaks are also prevented by using `LiveData` due to how it is lifecycle aware and as such destroys the data that belongs to it when the activity it belongs to is destroyed.
 
 However, this brings up another issue, as we cannot share data across activities if a `ViewModel` is aware of the lifecycle of the activity it belongs to.
 
 #### Data Repository
 
-To resolve this issue, a singleton class was implemented to store data that should be persistent across activites. On initialisation of an activity, and as such it's `ViewModel`, data is gathered from the data repository and data is set consistently when it is required based on user input.
+To resolve this issue, a singleton class was implemented to store data that should be persistent across activities. On initialisation of an activity, and as such it's `ViewModel`, data is gathered from the data repository and data is set consistently when it is required based on user input.
 
 <!-- prettier-ignore-start -->
 
@@ -70,7 +70,7 @@ To resolve this issue, a singleton class was implemented to store data that shou
 class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
     private var soundPool = SoundPool(8, AudioManager.STREAM_MUSIC, 0)
     // for all functions, a button id corresponds to a specific slot in the following 2 arrays
-    private var soundSelections = IntArray(8) // the soundSelections (any int) of button 1 to 8 (aka the track id that is selected, number ranges from 1 to as many tracks as therer are)
+    private var soundSelections = IntArray(8) // the soundSelections (any int) of button 1 to 8 (aka the track id that is selected, number ranges from 1 to as many tracks as there are)
     private var streamIds = IntArray(8) // the streamid (any int) of button 1 to 8 (stream ids are generated dynamically)
     private var sounds: HashMap<Int, File> = hashMapOf<Int, File>() //maps soundid to soundfile
     private var semitone = IntArray(8)
@@ -114,7 +114,7 @@ $$
 
 This equation relates to adjusting the current frequency by N semitones.
 
-In order to relate our pitch calculation to the devices gyroscopic measurments we made use of the roll value from the orientation of the gyroscope present on the phone
+In order to relate our pitch calculation to the devices gyroscopic measurements we made use of the roll value from the orientation of the gyroscope present on the phone
 
 $$
 frequency = {basefrequency} * 1.25^{roll}
@@ -143,13 +143,13 @@ fun changeFreq(newFreq: Float) { //sets the base frequency according to gyroscop
 
 {{< figure align=center width=auto height=500px  src="../../profiler.png" >}}
 
-To experiment with testing and profiling the application the Android Profilier was used to monitor resource usage and performance throught runtime.
+To experiment with testing and profiling the application the Android Profiler was used to monitor resource usage and performance throughout runtime.
 
 ### Main Page
 
 {{< figure align=center width=auto height=500px  src="../../metrics.png" >}}
 
-The main page showcased constant CPU usage during all stages of activity due to measurement at constant time steps. While memeory usage is at 144.5 MB which is not too bad considering that this is essentially a music playback software.
+The main page showcased constant CPU usage during all stages of activity due to measurement at constant time steps. While memory usage is at 144.5 MB which is not too bad considering that this is essentially a music playback software.
 
 ### Navigation With Editing
 
