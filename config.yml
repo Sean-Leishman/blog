@@ -44,15 +44,17 @@ params:
 
   defaultTheme: auto
   # disableThemeToggle: true
-  ShowShareButtons: true
-  ShowReadingTime: true
-  # disableSpecial1stPost: true
-  displayFullLangName: true
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
+  ShowShareButtons: false
+  ShowReadingTime: false
+  disableSpecial1stPost: false
+  displayFullLangName: false
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
   ShowRssButtonInSectionTermList: true
-  ShowToc: true
+  ShowToc: false
+  hideSummary: false
+  hideMeta: true
   # comments: false
   images: ["papermod-cover.png"]
   mainSections: ["blogs", "projects"]
@@ -80,8 +82,11 @@ params:
     Title: "keep on reading"
     Content: >
       - My name is Sean Leishman
+      
+        I'm intersted in computer science and any other thing that happens to come my way. 
+        I try to write regularily but I will make no such promises. Find below my blogs and project
+        writeups.
 
-      -   writing on computer science & life
 
   socialIcons:
     - name: github
@@ -92,10 +97,6 @@ params:
       url: "https://open.spotify.com/user/leishmansean"
     - name: cv
       url: "https://seanleishman.com"
-  editPost:
-    URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
   googlefonts: "https://fonts.googleapis.com/css?family=Merriweather|Fira+Mono|Droid+Sans"
   fontbody: "Droid Sans"
   fontcode: "Fira Mono"
