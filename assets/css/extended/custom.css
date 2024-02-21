@@ -1,0 +1,93 @@
+@font-face {
+  font-family:"TT2020";
+  src:url("/fonts/TT2020Base-Regular.woff2");
+  font-display:swap
+}
+@font-face {
+  font-family:"TT2020";
+  src:url("/fonts/TT2020Base-Italic.woff2");
+  font-style:italic;
+  font-display:swap
+}
+@font-face {
+  font-family:"TT2020";
+  src:url("/fonts/TT2020StyleE-Regular.woff2");
+  font-weight:600;
+  font-display:swap
+}
+@font-face {
+  font-family:"TT2020";
+  src:url("/fonts/TT2020StyleE-Italic.woff2");
+  font-weight:600;
+  font-style:italic;
+  font-display:swap
+}
+
+html:root {
+  font-size:16px;
+  --spacing: 100px;
+  --font-mono: "TT2020";
+  --light-bg:#EAE8D1;
+  --dark-bg: #142621;
+  --header-size: 16px;
+  --header-weight: 600;
+  --main-width: 850px;
+  --secondary: #444;
+  --border: #444;
+}
+.dark {
+    --theme: var(--dark-bg);
+}
+
+.list {
+    background: var(--light-bg);
+}
+body {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    --theme: var(--light-bg);
+}
+
+.nav {
+    margin-top: 10px;
+    align-content: center;
+}
+.main {
+    /*border-width: 0 1px 0 1px;
+    border-color: var(--secondary);
+    border-style: solid;
+    padding:var(--gap) 100px var(--gap) 100px;
+    */
+}
+
+.post-entry {
+    background: none;
+    border-width: 0 0 1px 0;
+}
+
+.entry-header h2 {
+    font-size: var(--header-size);
+    font-weight: var(--header-weight);
+    font-style: italic;
+}
+
+.post-content h2 {
+    font-size: 1.3em;
+}
+
+.post-content h1,h2,h3,h4,h5 {
+    font-style: italic;
+}
+
+.entry-content {
+    line-height: 1.4
+}
+
+.post-title {
+    font-size: 30px;
+}
+
+a, p, body {
+ font-size: 1rem;
+ line-height: 1.75;
+}
