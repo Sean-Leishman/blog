@@ -1,40 +1,130 @@
 @font-face {
-  font-family:"TT2020";
-  src:url("/fonts/TT2020Base-Regular.woff2");
-  font-display:swap
-}
-@font-face {
-  font-family:"TT2020";
-  src:url("/fonts/TT2020Base-Italic.woff2");
-  font-style:italic;
-  font-display:swap
-}
-@font-face {
-  font-family:"TT2020";
-  src:url("/fonts/TT2020StyleE-Regular.woff2");
-  font-weight:600;
-  font-display:swap
-}
-@font-face {
-  font-family:"TT2020";
-  src:url("/fonts/TT2020StyleE-Italic.woff2");
-  font-weight:600;
-  font-style:italic;
-  font-display:swap
+    font-family: "TT2020";
+    src: url("/fonts/TT2020Base-Regular.woff2");
+    font-display: swap
 }
 
-html:root {
-  font-size:16px;
-  --spacing: 100px;
-  --font-mono: "TT2020";
-  --light-bg:#eeece2;
-  --dark-bg: #142621;
-  --header-size: 16px;
-  --header-weight: 600;
-  --main-width: 850px;
-  --secondary: #444;
-  --border: #444;
+@font-face {
+    font-family: "TT2020";
+    src: url("/fonts/TT2020Base-Italic.woff2");
+    font-style: italic;
+    font-display: swap
 }
+
+@font-face {
+    font-family: "TT2020";
+    src: url("/fonts/TT2020StyleE-Regular.woff2");
+    font-weight: 600;
+    font-display: swap
+}
+
+@font-face {
+    font-family: "TT2020";
+    src: url("/fonts/TT2020StyleE-Italic.woff2");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap
+}
+
+.ibm-plex mono-thin {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.ibm-plex mono-extralight {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.ibm-plex mono-light {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.ibm-plex mono-regular {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ibm-plex mono-medium {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.ibm-plex mono-semibold {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.ibm-plex mono-bold {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.ibm-plex mono-thin-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.ibm-plex mono-extralight-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.ibm-plex mono-light-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.ibm-plex mono-regular-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.ibm-plex mono-medium-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.ibm-plex mono-semibold-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.ibm-plex mono-bold-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+html:root {
+    font-size: 16px;
+    --spacing: 100px;
+    --font-mono: "IBM Plex Mono";
+    --font-mono-weight: 400;
+    --light-bg: #ecf3eb;
+    --dark-bg: #142621;
+    --header-size: 16px;
+    --header-weight: 600;
+    --main-width: 700px;
+    --secondary: #444;
+    --border: #444;
+}
+
 .dark {
     --theme: var(--dark-bg);
 }
@@ -42,9 +132,11 @@ html:root {
 .list {
     background: var(--light-bg);
 }
+
 body {
     font-family: var(--font-mono);
     font-size: 16px;
+    font-weight: var(--font-mono-weight);
     --theme: var(--light-bg);
 }
 
@@ -52,6 +144,44 @@ body {
     margin-top: 10px;
     align-content: center;
 }
+
+.logo {
+    align-items: center;
+}
+
+.post-content {
+    max-width: calc(650px + var(--gap) * 2);
+    margin: auto;
+}
+
+
+.post-entry {
+    display: flex;
+    align-items: space-between;
+    justify-items: center;
+    width: 100%;
+
+    .entry-text-cover {
+        flex-grow: 2;
+        width: 50%;
+
+        .entry-content {}
+    }
+
+    .entry-header {
+        margin: auto;
+    }
+
+
+    .entry-cover {
+        width: 50%;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+}
+
 .main {
     /*border-width: 0 1px 0 1px;
     border-color: var(--secondary);
@@ -65,18 +195,54 @@ body {
     border-width: 0 0 1px 0;
 }
 
+.first-entry .entry-header h1 {
+    font-size: 4em;
+    font-weight: 700;
+    font-style: normal;
+    font-family: "IBM Plex Mono";
+}
+
 .entry-header h2 {
-    font-size: var(--header-size);
-    font-weight: var(--header-weight);
-    font-style: italic;
+    font-size: 1.3em;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.entry-content p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.post-header h1 {
+    font-size: 3em;
+    font-family: "IBM Plex Mono";
+}
+
+.post-content h1 {
+    font-size: 2.4em;
 }
 
 .post-content h2 {
-    font-size: 1.3em;
+    font-size: 2.15em;
 }
 
-.post-content h1,h2,h3,h4,h5 {
-    font-style: italic;
+.post-content h3 {
+    font-size: 1.9em;
+}
+
+.post-content h4 {
+    font-size: 1.75em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-style: normal;
+    font-weight: 600;
+    font-family: "TT2020";
+    font-size: 1.5em;
 }
 
 .entry-content {
@@ -87,7 +253,15 @@ body {
     font-size: 30px;
 }
 
-a, p, body {
- font-size: 1rem;
- line-height: 1.75;
+a,
+p,
+body {
+    font-size: 1rem;
+    opacity: 1;
+    line-height: 1.6;
+}
+
+#signature {
+    width: 50%;
+    padding: 10px;
 }
