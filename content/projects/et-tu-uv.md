@@ -6,6 +6,11 @@ tags: ["Project", "IoT", "CroudSouring", "Web Design", "Python", "Flask"]
 ShowBreadCrumbs: true
 ShowToc: false
 weight: 1
+cover:
+  image: "../../ettuuv-arch.png"
+  alt: "<alt text>"
+  caption: "<text>"
+  relative: false
 ---
 
 > Source code can be found at {{< newtabref href="https://github.com/Sean-Leishman/et-tu-uv" title="Github">}}

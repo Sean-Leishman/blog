@@ -108,9 +108,7 @@ To compute a new pitch for the audio file there are two base calculations. First
 
 The former involves simply adjusting the frequency of the sound that is being played.
 
-$$
-frequency = {basefrequency} * 2^{\frac{N}{12}}
-$$
+$$frequency = basefrequency * 2^{\frac{N}{12}}$$
 
 This equation relates to adjusting the current frequency by N semitones.
 
@@ -120,7 +118,7 @@ $$
 frequency = {basefrequency} * 1.25^{roll}
 $$
 
-`1.25` is used as a base of the power in order to smoothen and normalise the noisy output that is present in the gyroscope data so that the pitch does not fluctuate too rapidly. The result was derived from mapping SoundPool's upper & lower frequency limits to the upper & lower limits of the gyroscope's sensor. As such, we could module the full range of the device's orientation.
+1.25 is used as a base of the power in order to smoothen and normalise the noisy output that is present in the gyroscope data so that the pitch does not fluctuate too rapidly. The result was derived from mapping SoundPool's upper & lower frequency limits to the upper & lower limits of the gyroscope's sensor. As such, we could module the full range of the device's orientation.
 
 As such a final frequency can be calculated that allows pitch to be specified by the user and then by the orientation of the device.
 
