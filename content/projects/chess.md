@@ -5,6 +5,8 @@ date: "2023-06-24"
 tags: ["Project", "Chess", "Python", "Pygame", "ML"]
 ShowBreadCrumbs: true
 ShowToc: false
+hideMeta: false
+Summary: "Description of a project where I attempt to build a chess engine in Python. Here I discuss the first attempt and the subsequent approaches that I investigated in speeding up the engine"
 weight: 1
 ---
 

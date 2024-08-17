@@ -3,8 +3,11 @@ author: "Sean Leishman"
 title: "StockTrend:  Unveiling the Power of Twitter Data"
 date: "2023-06-20"
 tags: ["Project", "Web", "Svelte", "Twitter", "Finance"]
+type: "Project"
 ShowBreadCrumbs: true
 ShowToc: false
+hideMeta: false
+Summary: "A webiste as a frontend for a sentiment analysis model for Twitter data on stock trends"
 weight: 1
 ---
 
