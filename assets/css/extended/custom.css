@@ -157,21 +157,9 @@ body {
 
 .post-entry {
     display: flex;
-    align-items: space-between;
     justify-items: center;
+    flex-direction: column;
     width: 100%;
-
-    .entry-text-cover {
-        flex-grow: 2;
-        width: 50%;
-
-        .entry-content {}
-    }
-
-    .entry-header {
-        margin: auto;
-    }
-
 
     .entry-cover {
         width: 50%;

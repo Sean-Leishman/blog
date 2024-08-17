@@ -3,8 +3,10 @@ author: "Sean Leishman"
 title: "Welcome Post"
 date: "2023-06-17"
 tags: ["Personal"]
+Summary: "Introduction to the Blog"
 ShowBreadCrumbs: true
 ShowToc: false
+hideMeta: false
 ---
 
 Welcome to my little corner of the internet. This where I intend to share my thoughts and insights to anyone who may be

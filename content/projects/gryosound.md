@@ -5,6 +5,8 @@ date: "2023-07-16"
 tags: ["Project", "Music", "App", "Android", "Kotlin"]
 ShowBreadCrumbs: true
 ShowToc: false
+hideMeta: false
+Summary: "A mobile app that uses the sensors on a phone to create music in a fun and novel manner"
 weight: 1
 ---
 

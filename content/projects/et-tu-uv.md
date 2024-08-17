@@ -5,12 +5,9 @@ date: "2023-07-03"
 tags: ["Project", "IoT", "CroudSouring", "Web Design", "Python", "Flask"]
 ShowBreadCrumbs: true
 ShowToc: false
+hideMeta: false
+Summary: "A group project that aimed to solve issues in skin cancer by tracking and utilizing UV data on a personal level"
 weight: 1
-cover:
-  image: "../../ettuuv-arch.png"
-  alt: "<alt text>"
-  caption: "<text>"
-  relative: false
 ---
 
 > Source code can be found at {{< newtabref href="https://github.com/Sean-Leishman/et-tu-uv" title="Github">}}
